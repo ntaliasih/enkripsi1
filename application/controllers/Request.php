@@ -24,7 +24,7 @@ class Request extends CI_Controller {
     }
     
     function do_tambah() {
-		$this->form_validation->set_rules('secretkey','Secret Key','trim|required|min_length[8]');
+		$this->form_validation->set_rules('secretkey','Secret Key','trim|required');
 		
 		if ($this->form_validation->run() != false) {
             $kdRequest = $this->input->post('kdRequest', TRUE);
@@ -88,7 +88,7 @@ class Request extends CI_Controller {
                 echo json_encode($data);
             }
 		} else {
-			$data['message'] = "Data tidak boleh kosong ataupun kurang dari 8 karakter.";
+			$data['message'] = "Data tidak boleh kosong.";
 			$data['error_id'] = 2;
 
 			echo json_encode($data);
