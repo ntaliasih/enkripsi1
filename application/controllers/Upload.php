@@ -28,7 +28,7 @@ class Upload extends CI_Controller {
 
 	public function do_upload() {
 		$config['allowed_types'] = 'sql|gz';
-        $config['upload_path'] = './uploads/db/';
+        $config['upload_path'] = './uploads/file/';
 
 		$this->load->library('upload', $config);
         $this->upload->initialize($config);
